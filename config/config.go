@@ -5,9 +5,9 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/xxf098/lite-proxy/common"
-	"github.com/xxf098/lite-proxy/outbound"
-	"github.com/xxf098/lite-proxy/utils"
+	"github.com/laof/lite-speed-test/common"
+	"github.com/laof/lite-speed-test/outbound"
+	"github.com/laof/lite-speed-test/utils"
 )
 
 func Link2Dialer(link string) (outbound.Dialer, error) {

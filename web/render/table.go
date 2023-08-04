@@ -13,8 +13,8 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/xxf098/lite-proxy/constant"
-	"github.com/xxf098/lite-proxy/download"
+	"github.com/laof/lite-speed-test/constant"
+	"github.com/laof/lite-speed-test/download"
 	"golang.org/x/image/font"
 )
 

@@ -3,7 +3,7 @@ package protocol
 import (
 	"net"
 
-	"github.com/xxf098/lite-proxy/common/pool"
+	"github.com/laof/lite-speed-test/common/pool"
 )
 
 type PacketConn struct {

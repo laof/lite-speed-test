@@ -11,11 +11,11 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/xxf098/lite-proxy/common/pool"
-	"github.com/xxf098/lite-proxy/log"
-	"github.com/xxf098/lite-proxy/transport/ssr/tools"
+	"github.com/laof/lite-speed-test/common/pool"
+	"github.com/laof/lite-speed-test/log"
+	"github.com/laof/lite-speed-test/transport/ssr/tools"
 
-	"github.com/Dreamacro/go-shadowsocks2/core"
+	"github.com/laof/go2/core"
 )
 
 func init() {

@@ -7,13 +7,13 @@ import (
 	"net"
 	"strconv"
 
-	"github.com/Dreamacro/go-shadowsocks2/core"
-	"github.com/Dreamacro/go-shadowsocks2/shadowaead"
-	"github.com/Dreamacro/go-shadowsocks2/shadowstream"
-	C "github.com/xxf098/lite-proxy/constant"
-	"github.com/xxf098/lite-proxy/transport/dialer"
-	"github.com/xxf098/lite-proxy/transport/ssr/obfs"
-	"github.com/xxf098/lite-proxy/transport/ssr/protocol"
+	"github.com/laof/go2/core"
+	"github.com/laof/go2/shadowaead"
+	"github.com/laof/go2/shadowstream"
+	C "github.com/laof/lite-speed-test/constant"
+	"github.com/laof/lite-speed-test/transport/dialer"
+	"github.com/laof/lite-speed-test/transport/ssr/obfs"
+	"github.com/laof/lite-speed-test/transport/ssr/protocol"
 )
 
 type ShadowSocksR struct {

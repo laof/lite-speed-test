@@ -10,9 +10,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/xxf098/lite-proxy/common/cache"
-	"github.com/xxf098/lite-proxy/common/picker"
-	"github.com/xxf098/lite-proxy/transport/resolver"
+	"github.com/laof/lite-speed-test/common/cache"
+	"github.com/laof/lite-speed-test/common/picker"
+	"github.com/laof/lite-speed-test/transport/resolver"
 	"golang.org/x/sync/singleflight"
 
 	// "github.com/Dreamacro/clash/component/trie"

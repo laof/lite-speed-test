@@ -6,7 +6,7 @@ import (
 	"net/url"
 	"strconv"
 
-	"github.com/xxf098/lite-proxy/outbound"
+	"github.com/laof/lite-speed-test/outbound"
 )
 
 // type TrojanGoOption struct {

@@ -6,7 +6,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/xxf098/lite-proxy/tunnel"
+	"github.com/laof/lite-speed-test/tunnel"
 )
 
 // WorkerPool serves incoming connections via a pool of workers

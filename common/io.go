@@ -5,7 +5,7 @@ import (
 	"io"
 	"net"
 
-	"github.com/xxf098/lite-proxy/log"
+	"github.com/laof/lite-speed-test/log"
 )
 
 type RewindReader struct {

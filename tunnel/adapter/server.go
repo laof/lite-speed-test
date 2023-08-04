@@ -6,13 +6,13 @@ import (
 	"errors"
 	"net"
 
-	"github.com/xxf098/lite-proxy/common"
-	"github.com/xxf098/lite-proxy/log"
-	"github.com/xxf098/lite-proxy/tunnel"
-	"github.com/xxf098/lite-proxy/tunnel/freedom"
-	"github.com/xxf098/lite-proxy/tunnel/http"
-	"github.com/xxf098/lite-proxy/tunnel/socks"
-	"github.com/xxf098/lite-proxy/utils"
+	"github.com/laof/lite-speed-test/common"
+	"github.com/laof/lite-speed-test/log"
+	"github.com/laof/lite-speed-test/tunnel"
+	"github.com/laof/lite-speed-test/tunnel/freedom"
+	"github.com/laof/lite-speed-test/tunnel/http"
+	"github.com/laof/lite-speed-test/tunnel/socks"
+	"github.com/laof/lite-speed-test/utils"
 )
 
 type Server struct {

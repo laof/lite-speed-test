@@ -7,7 +7,7 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/xxf098/lite-proxy/dns"
+	"github.com/laof/lite-speed-test/dns"
 	"gopkg.in/yaml.v3"
 )
 

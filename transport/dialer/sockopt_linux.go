@@ -1,3 +1,4 @@
+//go:build linux
 // +build linux
 
 package dialer
@@ -5,7 +6,7 @@ package dialer
 import (
 	"syscall"
 
-	"github.com/xxf098/lite-proxy/common"
+	"github.com/laof/lite-speed-test/common"
 	"golang.org/x/sys/unix"
 )
 

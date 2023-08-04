@@ -9,7 +9,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/xxf098/lite-proxy/common/pool"
+	"github.com/laof/lite-speed-test/common/pool"
 )
 
 func init() {

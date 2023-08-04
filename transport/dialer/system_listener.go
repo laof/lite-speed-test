@@ -5,8 +5,8 @@ import (
 	"net"
 	"syscall"
 
-	"github.com/xxf098/lite-proxy/common"
-	"github.com/xxf098/lite-proxy/log"
+	"github.com/laof/lite-speed-test/common"
+	"github.com/laof/lite-speed-test/log"
 )
 
 var (

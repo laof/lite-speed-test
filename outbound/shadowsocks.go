@@ -8,14 +8,14 @@ import (
 	"net"
 	"strconv"
 
-	"github.com/xxf098/lite-proxy/stats"
-	"github.com/xxf098/lite-proxy/transport/dialer"
-	"github.com/xxf098/lite-proxy/transport/socks5"
+	"github.com/laof/lite-speed-test/stats"
+	"github.com/laof/lite-speed-test/transport/dialer"
+	"github.com/laof/lite-speed-test/transport/socks5"
 
-	"github.com/Dreamacro/go-shadowsocks2/core"
-	"github.com/xxf098/lite-proxy/common/structure"
-	C "github.com/xxf098/lite-proxy/constant"
-	"github.com/xxf098/lite-proxy/log"
+	"github.com/laof/go2/core"
+	"github.com/laof/lite-speed-test/common/structure"
+	C "github.com/laof/lite-speed-test/constant"
+	"github.com/laof/lite-speed-test/log"
 )
 
 type ShadowSocks struct {

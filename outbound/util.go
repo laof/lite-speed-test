@@ -8,9 +8,9 @@ import (
 	"sync"
 	"time"
 
-	C "github.com/xxf098/lite-proxy/constant"
-	"github.com/xxf098/lite-proxy/transport/resolver"
-	"github.com/xxf098/lite-proxy/transport/socks5"
+	C "github.com/laof/lite-speed-test/constant"
+	"github.com/laof/lite-speed-test/transport/resolver"
+	"github.com/laof/lite-speed-test/transport/socks5"
 )
 
 const (

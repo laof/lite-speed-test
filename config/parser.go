@@ -9,8 +9,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/xxf098/lite-proxy/common/structure"
-	"github.com/xxf098/lite-proxy/outbound"
+	"github.com/laof/lite-speed-test/common/structure"
+	"github.com/laof/lite-speed-test/outbound"
 )
 
 func ParseProxy(mapping map[string]interface{}, namePrefix string) (string, error) {

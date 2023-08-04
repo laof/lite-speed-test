@@ -13,9 +13,9 @@ import (
 	"strings"
 
 	// "github.com/p4gefau1t/trojan-go/common"
-	"github.com/xxf098/lite-proxy/common"
-	"github.com/xxf098/lite-proxy/log"
-	"github.com/xxf098/lite-proxy/tunnel"
+	"github.com/laof/lite-speed-test/common"
+	"github.com/laof/lite-speed-test/log"
+	"github.com/laof/lite-speed-test/tunnel"
 )
 
 type ConnectConn struct {

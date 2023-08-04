@@ -13,9 +13,9 @@ import (
 	"net/http"
 	"sync"
 
-	C "github.com/xxf098/lite-proxy/constant"
-	"github.com/xxf098/lite-proxy/transport/socks5"
-	"github.com/xxf098/lite-proxy/transport/vmess"
+	C "github.com/laof/lite-speed-test/constant"
+	"github.com/laof/lite-speed-test/transport/socks5"
+	"github.com/laof/lite-speed-test/transport/vmess"
 )
 
 const (

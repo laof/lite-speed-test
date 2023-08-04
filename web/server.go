@@ -18,9 +18,9 @@ import (
 	"time"
 
 	"github.com/gorilla/websocket"
-	"github.com/xxf098/lite-proxy/config"
-	"github.com/xxf098/lite-proxy/utils"
-	"github.com/xxf098/lite-proxy/web/render"
+	"github.com/laof/lite-speed-test/config"
+	"github.com/laof/lite-speed-test/utils"
+	"github.com/laof/lite-speed-test/web/render"
 )
 
 var upgrader = websocket.Upgrader{}

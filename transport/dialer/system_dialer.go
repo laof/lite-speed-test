@@ -6,7 +6,7 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/xxf098/lite-proxy/log"
+	"github.com/laof/lite-speed-test/log"
 )
 
 type controller func(network, address string, fd uintptr) error

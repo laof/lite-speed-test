@@ -9,11 +9,11 @@ import (
 	"net/http"
 	"strconv"
 
-	C "github.com/xxf098/lite-proxy/constant"
-	"github.com/xxf098/lite-proxy/stats"
-	"github.com/xxf098/lite-proxy/transport/dialer"
-	"github.com/xxf098/lite-proxy/transport/gun"
-	"github.com/xxf098/lite-proxy/transport/trojan"
+	C "github.com/laof/lite-speed-test/constant"
+	"github.com/laof/lite-speed-test/stats"
+	"github.com/laof/lite-speed-test/transport/dialer"
+	"github.com/laof/lite-speed-test/transport/gun"
+	"github.com/laof/lite-speed-test/transport/trojan"
 	"golang.org/x/net/http2"
 )
 

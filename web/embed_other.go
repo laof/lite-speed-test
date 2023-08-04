@@ -8,5 +8,4 @@ import "embed"
 //go:embed gui/dist/*
 var guiStatic embed.FS
 
-//go:embed misc/WenQuanYiMicroHei-01.ttf
 var FontBytes []byte

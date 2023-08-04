@@ -5,7 +5,7 @@ import (
 	"errors"
 	"net"
 
-	"github.com/xxf098/lite-proxy/transport/resolver"
+	"github.com/laof/lite-speed-test/transport/resolver"
 )
 
 func DialContext(ctx context.Context, network, address string) (net.Conn, error) {

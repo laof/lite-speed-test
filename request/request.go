@@ -11,13 +11,13 @@ import (
 	"strings"
 	"time"
 
-	"github.com/xxf098/lite-proxy/common"
-	"github.com/xxf098/lite-proxy/config"
-	C "github.com/xxf098/lite-proxy/constant"
-	"github.com/xxf098/lite-proxy/dns"
-	"github.com/xxf098/lite-proxy/outbound"
-	"github.com/xxf098/lite-proxy/transport/resolver"
-	"github.com/xxf098/lite-proxy/utils"
+	"github.com/laof/lite-speed-test/common"
+	"github.com/laof/lite-speed-test/config"
+	C "github.com/laof/lite-speed-test/constant"
+	"github.com/laof/lite-speed-test/dns"
+	"github.com/laof/lite-speed-test/outbound"
+	"github.com/laof/lite-speed-test/transport/resolver"
+	"github.com/laof/lite-speed-test/utils"
 )
 
 const (

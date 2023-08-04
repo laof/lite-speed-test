@@ -3,8 +3,8 @@ package freedom
 import (
 	"net"
 
-	"github.com/xxf098/lite-proxy/common"
-	"github.com/xxf098/lite-proxy/tunnel"
+	"github.com/laof/lite-speed-test/common"
+	"github.com/laof/lite-speed-test/tunnel"
 )
 
 type Conn struct {

@@ -4,7 +4,7 @@ import (
 	"errors"
 	"net"
 
-	"github.com/xxf098/lite-proxy/dns"
+	"github.com/laof/lite-speed-test/dns"
 )
 
 var defaultResolver *dns.Resolver

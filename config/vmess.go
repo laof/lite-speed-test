@@ -11,8 +11,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/xxf098/lite-proxy/outbound"
-	"github.com/xxf098/lite-proxy/utils"
+	"github.com/laof/lite-speed-test/outbound"
+	"github.com/laof/lite-speed-test/utils"
 )
 
 var RegShadowrocketVmess = regexp.MustCompile(`(?i)vmess://(\S+?)@(\S+?):([0-9]{2,5})/?([?#][^\s]+)`)

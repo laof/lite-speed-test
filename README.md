@@ -85,7 +85,7 @@ import (
     "context"
     "fmt"
 	"time"
-    "github.com/xxf098/lite-proxy/web"
+    "github.com/laof/lite-speed-test/web"
 )
 // see more details in ./examples
 func testPing() error {

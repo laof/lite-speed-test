@@ -8,7 +8,7 @@ import (
 	"net"
 	"strconv"
 
-	"github.com/xxf098/lite-proxy/common"
+	"github.com/laof/lite-speed-test/common"
 )
 
 type AddressType byte

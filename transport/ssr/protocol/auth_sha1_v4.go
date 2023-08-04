@@ -8,8 +8,8 @@ import (
 	"math/rand"
 	"net"
 
-	"github.com/xxf098/lite-proxy/common/pool"
-	"github.com/xxf098/lite-proxy/transport/ssr/tools"
+	"github.com/laof/lite-speed-test/common/pool"
+	"github.com/laof/lite-speed-test/transport/ssr/tools"
 )
 
 func init() {

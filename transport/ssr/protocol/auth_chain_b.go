@@ -4,7 +4,7 @@ import (
 	"net"
 	"sort"
 
-	"github.com/xxf098/lite-proxy/transport/ssr/tools"
+	"github.com/laof/lite-speed-test/transport/ssr/tools"
 )
 
 func init() {

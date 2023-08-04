@@ -20,11 +20,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/xxf098/lite-proxy/config"
-	"github.com/xxf098/lite-proxy/download"
-	"github.com/xxf098/lite-proxy/request"
-	"github.com/xxf098/lite-proxy/utils"
-	"github.com/xxf098/lite-proxy/web/render"
+	"github.com/laof/lite-speed-test/config"
+	"github.com/laof/lite-speed-test/download"
+	"github.com/laof/lite-speed-test/request"
+	"github.com/laof/lite-speed-test/utils"
+	"github.com/laof/lite-speed-test/web/render"
 )
 
 var (
