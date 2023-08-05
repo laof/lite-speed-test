@@ -5,13 +5,18 @@ import (
 	"flag"
 	"fmt"
 	"log"
-	"strconv"
 	"time"
 
 	"github.com/laof/lite-speed-test/web"
 )
 
-func Test(url string) ([]int, error) {
+type TestResponse struct {
+	SuccessIndex []int
+	ErrorIndex   []int
+	Ok           bool
+}
+
+func Test(url string) (TestResponse, error) {
 	link := flag.String("link", url, "link to test")
 	mode := flag.String("mode", "pingonly", "speed test mode")
 	flag.Parse()
@@ -35,20 +40,27 @@ func Test(url string) ([]int, error) {
 	}
 	ctx := context.Background()
 
-	arr := make([]int, 0)
+	res := TestResponse{SuccessIndex: []int{}, ErrorIndex: []int{}, Ok: false}
 
 	nodes, err := web.TestContext(ctx, opts, &web.EmptyMessageWriter{})
 	if err != nil {
-		return arr, err
+		return res, err
 	}
 
 	for _, node := range nodes {
 		// tested node info here
 		if node.IsOk {
-			fmt.Println("id:", node.Id, node.Remarks, "ping:", node.Ping)
-			o, _ := strconv.Atoi(node.Ping)
-			arr = append(arr, o)
+			fmt.Println("SUCCESS id:", node.Id, node.Remarks, "ping:", node.Ping)
+			res.SuccessIndex = append(res.SuccessIndex, node.Id)
+		} else {
+			fmt.Println("ERROR id:", node.Id)
+			res.ErrorIndex = append(res.ErrorIndex, node.Id)
 		}
 	}
-	return arr, nil
+
+	if len(res.SuccessIndex) > 0 && len(res.ErrorIndex) == 0 {
+		res.Ok = true
+	}
+
+	return res, nil
 }
