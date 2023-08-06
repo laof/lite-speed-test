@@ -9,11 +9,6 @@ import (
 	"github.com/laof/lite-speed-test/ping"
 )
 
-type Data interface {
-	Get() (HttpData, error)
-	Test() (TestResult, error)
-}
-
 type Nodes struct {
 	Url string
 	Max int
