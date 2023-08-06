@@ -9,9 +9,19 @@ import (
 	"github.com/laof/lite-speed-test/ping"
 )
 
-func Get(link string, check bool, max int) (Res, error) {
-	var data Res
-	res, err := http.Get(link)
+type Data interface {
+	Get() (HttpData, error)
+	Test() (TestResult, error)
+}
+
+type Nodes struct {
+	Url string
+	Max int
+}
+
+func (s Nodes) Get() (HttpData, error) {
+	var data HttpData
+	res, err := http.Get(s.Url)
 
 	if err != nil {
 		return data, err
@@ -26,12 +36,9 @@ func Get(link string, check bool, max int) (Res, error) {
 		return data, err
 	}
 
-	var servers []string
-	var nodes []string
 	for i, item := range data.List {
 		name := reverseString(item.Name)
 		datetime := reverseString(item.Datetime)
-
 		txt := item.Data
 
 		for _, o := range data.Decode {
@@ -41,42 +48,42 @@ func Get(link string, check bool, max int) (Res, error) {
 		data.List[i].Name = name
 		data.List[i].Datetime = datetime
 		data.List[i].Data = txt
+	}
+	data.Decode = make([]Decode, 0)
+	return data, nil
+}
 
-		arr := strings.Split(txt, ",")
+func (s Nodes) Test(data HttpData) (TestResult, error) {
+	var servers []string
+	var nodes []string
+	var max = s.Max
+	result := TestResult{}
+	for _, item := range data.List {
+		arr := strings.Split(item.Data, ",")
 
 		if max > 0 {
 			if len(arr) > max {
 				arr = arr[0:max]
 			}
 		}
-
 		nodes = append(nodes, arr...)
 		for range arr {
-			servers = append(servers, name)
+			servers = append(servers, item.Name)
 		}
-
-	}
-
-	data.Decode = make([]Decode, 0)
-
-	if !check {
-		return data, nil
 	}
 
 	ssr := strings.Join(nodes, "\n")
-
-	testRes, er := ping.Test(ssr)
-	if er != nil {
-		return data, er
+	res, err := ping.Test(ssr)
+	if err != nil {
+		return result, err
 	}
 
-	for _, n := range testRes.SuccessIndex {
-		data.SuccessNodes = append(data.SuccessNodes, nodes[n])
+	for _, n := range res.SuccessIndex {
+		result.SuccessNodes = append(result.SuccessNodes, nodes[n])
 	}
+	result.ErrorServers = getErrorServers(res.ErrorIndex, servers)
 
-	data.ErrorServers = getErrorServers(testRes.ErrorIndex, servers)
-
-	return data, nil
+	return result, nil
 }
 
 func hasValue(str []string, value string) bool {
@@ -132,12 +139,15 @@ func reverseString(str string) string {
 	return string(byteSlice)
 }
 
-type Res struct {
-	SuccessNodes []string `json:"successNodes"`
-	ErrorServers []string `json:"errorServers"`
-	List         []List   `json:"list"`
-	Decode       []Decode `json:"decode"`
-	Update       string   `json:"update"`
+type TestResult struct {
+	SuccessNodes []string
+	ErrorServers []string
+}
+
+type HttpData struct {
+	List   []List   `json:"list"`
+	Decode []Decode `json:"decode"`
+	Update string   `json:"update"`
 }
 
 type List struct {
