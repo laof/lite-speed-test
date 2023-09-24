@@ -153,6 +153,7 @@ type HttpData struct {
 	List   []List   `json:"list"`
 	Decode []Decode `json:"decode"`
 	Update string   `json:"update"`
+	Conf   []string `json:"conf"`
 }
 
 type List struct {
