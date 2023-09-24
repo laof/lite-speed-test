@@ -2,6 +2,7 @@ package data
 
 import (
 	"encoding/json"
+	"errors"
 	"io"
 	"net/http"
 	"strings"
@@ -54,6 +55,11 @@ func (s Nodes) Test(data HttpData) (TestResult, error) {
 	var max = s.Max
 	result := TestResult{}
 	for _, item := range data.List {
+
+		if item.Data == "" {
+			continue
+		}
+
 		arr := strings.Split(item.Data, ",")
 
 		if max > 0 {
@@ -65,6 +71,10 @@ func (s Nodes) Test(data HttpData) (TestResult, error) {
 		for range arr {
 			servers = append(servers, item.Name)
 		}
+	}
+
+	if len(nodes) == 0 {
+		return result, errors.New("no data(nodes)")
 	}
 
 	ssr := strings.Join(nodes, "\n")
