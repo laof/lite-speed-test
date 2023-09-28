@@ -53,6 +53,7 @@ func (s Nodes) Test(data HttpData) (TestResult, error) {
 	var servers []string
 	var nodes []string
 	var max = s.Max
+	var all []string
 	result := TestResult{}
 	for _, item := range data.List {
 
@@ -61,7 +62,7 @@ func (s Nodes) Test(data HttpData) (TestResult, error) {
 		}
 
 		arr := strings.Split(item.Data, ",")
-
+		all = append(all, item.Name)
 		if max > 0 {
 			if len(arr) > max {
 				arr = arr[0:max]
@@ -88,7 +89,14 @@ func (s Nodes) Test(data HttpData) (TestResult, error) {
 	}
 
 	result.ErrorServers = getServerByIndex(res.ErrorIndex, servers)
-	result.SuccessServers = getServerByIndex(res.SuccessIndex, servers)
+
+	for _, vvvv := range all {
+
+		if !hasValue(result.ErrorServers, vvvv) {
+			result.SuccessServers = append(result.SuccessServers, vvvv)
+		}
+
+	}
 
 	return result, nil
 }
