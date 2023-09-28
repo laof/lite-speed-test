@@ -86,7 +86,9 @@ func (s Nodes) Test(data HttpData) (TestResult, error) {
 	for _, n := range res.SuccessIndex {
 		result.SuccessNodes = append(result.SuccessNodes, nodes[n])
 	}
-	result.ErrorServers = getErrorServers(res.ErrorIndex, servers)
+
+	result.ErrorServers = getServerByIndex(res.ErrorIndex, servers)
+	result.SuccessServers = getServerByIndex(res.SuccessIndex, servers)
 
 	return result, nil
 }
@@ -116,10 +118,10 @@ func removeDuplicates(arr []string) []string {
 
 }
 
-func getErrorServers(errorIndex []int, service []string) []string {
+func getServerByIndex(indexArr []int, service []string) []string {
 	var nodes []string
 
-	for _, n := range errorIndex {
+	for _, n := range indexArr {
 
 		if !hasValue(nodes, service[n]) {
 			nodes = append(nodes, service[n])
@@ -145,8 +147,9 @@ func reverseString(str string) string {
 }
 
 type TestResult struct {
-	SuccessNodes []string
-	ErrorServers []string
+	SuccessNodes   []string
+	ErrorServers   []string
+	SuccessServers []string
 }
 
 type HttpData struct {
