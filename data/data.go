@@ -38,14 +38,14 @@ func (s Nodes) Get() (HttpData, error) {
 		txt := item.Data
 
 		for _, o := range data.Decode {
-			txt = strings.ReplaceAll(txt, o.K, o.V)
+			txt = strings.ReplaceAll(txt, o[1], o[0])
 		}
 
 		data.List[i].Name = name
 		data.List[i].Datetime = datetime
 		data.List[i].Data = txt
 	}
-	data.Decode = make([]Decode, 0)
+	data.Decode = make([][]string, 0)
 	return data, nil
 }
 
@@ -158,13 +158,14 @@ type TestResult struct {
 	SuccessNodes   []string
 	ErrorServers   []string
 	SuccessServers []string
+	SuccessList    []List
 }
 
 type HttpData struct {
-	List   []List   `json:"list"`
-	Decode []Decode `json:"decode"`
-	Update string   `json:"update"`
-	Conf   []string `json:"conf"`
+	List   []List     `json:"list"`
+	Decode [][]string `json:"decode"`
+	Update string     `json:"update"`
+	Conf   []string   `json:"conf"`
 }
 
 type List struct {
@@ -172,8 +173,4 @@ type List struct {
 	Datetime string `json:"datetime"`
 	Length   int    `json:"length"`
 	Data     string `json:"data"`
-}
-type Decode struct {
-	K string `json:"k"`
-	V string `json:"v"`
 }
